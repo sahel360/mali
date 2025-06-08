@@ -1,0 +1,503 @@
+/* Définir les polices personnalisées */
+@font-face {
+    font-family: 'INGAME';
+    src: url('pol/INGAME.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PlayfairDisplaySC-Black';
+    src: url('pol/PlayfairDisplaySC-Black.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Robot-Rebels';
+    src: url('pol/Robot-Rebels.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('pol/Roboto-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Boul';
+    src: url('pol/Boul.otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PlayfairDisplaySC-Bold';
+    src: url('pol/PlayfairDisplaySC-Bold.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Sobatyan-Regular';
+    src: url('pol/Sobatyan-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto-MediumItalic';
+    src: url('pol/Roboto-MediumItalic.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'MilestoneBrush';
+    src: url('pol/MilestoneBrush.otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Rostack';
+    src: url('pol/Rostack.otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto-Black';
+    src: url('pol/Roboto-Black.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Matemasie-Regular';
+    src: url('pol/Matemasie-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'NewAmsterdam-Regular';
+    src: url('pol/NewAmsterdam-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'NerkoOne-Regular';
+    src: url('pol/NerkoOne-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('pol/Roboto-Bold.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'DMSerifText-Regular';
+    src: url('pol/DMSerifText-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Reset basique */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Barre de navigation principale */
+.navbar {
+  background: linear-gradient(to right, rgb(255,255,255), rgb(231,250,254), rgb(255,255,255));
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  z-index: 100; /* S'assure que la navbar est au-dessus du reste */
+}
+
+/* Conteneur centré pour la navigation, limite à 1200px de largeur */
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto; /* Centre horizontalement */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.logo {
+    display: flex; /* Alignement horizontal du logo image et du texte */
+    align-items: center; /* Alignement vertical centré */
+}
+
+/* Image du logo */
+.logo img {
+    height: 50px; /* Hauteur fixe de l'image */
+    margin-right: 10px; /* Espace entre l'image et le texte */
+}
+
+/* Liste horizontale des liens de navigation */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Chaque élément de la liste peut contenir un sous-menu */
+.nav-links li {
+  position: relative;
+}
+
+/* Liens de la navbar */
+.nav-links a {
+  font-family:'Roboto-Black';
+  text-decoration: none;
+  color: #333;
+  padding: 15px 12px;
+  display: inline-block;
+  transition: color 0.3s;
+}
+
+/* Effet au survol */
+.nav-links a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+/* Affichage du méga-menu lors du survol */
+.nav-links .dropdown:hover .mega-menu {
+  display: flex;
+}
+.nav-links .dropdown:hover .mega-menuu {
+  display: flex;
+}
+
+/* -------- MEGA MENU -------- */
+.mega-menu,.mega-menuu {
+  display: none; /* Caché par défaut */
+  position: absolute;
+  top: 100%; /* Juste sous le lien parent */
+  overflow: auto;
+  width: auto; /* Même largeur que .nav-container */
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px 40px;
+  z-index: 10;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  animation: slideDown 0.3s ease;
+  box-sizing: border-box;
+}
+
+.mega-menu{
+  left: 50%; /* Centre horizontalement */
+  transform: translateX(-86%); /* Centre par rapport au parent */
+}
+.mega-menuu{
+  left: 50%; /* Centre horizontalement */
+  transform: translateX(-30%); /* Centre par rapport au parent */
+}
+
+/* Animation douce d'apparition */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Colonne dans le méga-menu */
+.mega-column {
+  flex: 0 0 180px; /* Taille fixe */
+  padding-right: 20px;
+}
+
+/* Titre de colonne */
+.mega-column h4 {
+  margin-bottom: 10px;
+  color: #007bff;
+  font-size: 16px;
+}
+
+/* Liens dans une colonne */
+.mega-column a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  margin: 5px 0;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.mega-column a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+/* Colonne avec une image promotionnelle */
+.mega-banner {
+  flex: 0 0 200px;
+  text-align: center;
+}
+
+.mega-banner img {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 8px;
+}
+
+.mega-banner p {
+  margin: 10px 0;
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Bouton stylisé */
+.btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.bloc-service {
+  background: linear-gradient(to right, rgba(255,255,255,0.5), rgba(255,255,255,0)), url('images/agriculture.jpg');
+background-size: cover;
+background-position: center;
+
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  
+}
+
+.bloc-texte {
+  flex: 1 1 60%;
+  padding: 2rem;
+  background: linear-gradient(to right, rgba(255,255,255,0.95) 80%, rgba(255,255,255,0));
+  z-index: 2;
+  position: relative;
+}
+
+.bloc-liste {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.bloc-liste li {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.bloc-image {
+  flex: 1 1 40%;
+  position: relative;
+}
+
+.image-service {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+.section-img {
+  overflow: auto;
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  border-radius: 10px;
+  margin: 1px auto;
+  display: block;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.imgwlc{
+ overflow: auto;
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  margin: 1px auto;
+  display: block;
+   -webkit-mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent); 
+}
+.section .ambition{
+  font-size: 20px;
+    font-family: 'NerkoOne-Regular','MilestoneBrush', Arial, sans-serif; /* Police utilisée */
+  }
+
+.section {
+  max-width: auto;
+  margin: 40px auto;
+  background: white;
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #0a3d62; /* bleu foncé */
+  padding-bottom: 8px;
+}
+
+.article-title {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: #1e3799;
+}
+
+.carton{
+  display: flex;
+ overflow: auto;
+width: auto;
+}
+.carte{
+  padding: 2px;
+  margin: 5px;
+  width: 50%;
+box-sizing: border-box;
+flex-wrap: wrap;
+}
+.imgcarte{
+  margin: 5px;
+  width:auto;
+  height: 200px;
+  border-radius: 5px;
+  object-fit: cover;
+
+  /* Masque dégradé horizontal */
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.article-subtitle {
+  font-size: 1.2rem;
+  margin-top: 15px;
+  margin-bottom: 8px;
+  color: #3867d6;
+}
+
+.section-text,
+.article-text {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.service-list {
+  list-style: disc inside;
+  margin-left: 15px;
+  color: #444;
+}
+
+.service-list li {
+  margin-bottom: 8px;
+}
+
+.service-list strong {
+  color: #0a3d62;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.contact-info a {
+  color: #4a90e2;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive simple */
+@media (max-width: 600px) {
+  .section {
+    padding: 20px;
+    margin: 20px 15px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+}
+
+
+/* -------- RESPONSIVE DESIGN -------- */
+@media (max-width: 992px) {
+  /* Empile les éléments verticalement en mode mobile */
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Liens en colonne */
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* Mega menu prend toute la largeur de l'écran */
+  .mega-menu, .mega-menuu {
+    width: 100vw;
+    left: 0;
+    transform: none; /* Annule le centrage */
+    flex-wrap: wrap;
+  }
+
+  /* Colonne prend presque la moitié de la largeur */
+  .mega-column {
+    flex: 1 1 45%;
+    margin-bottom: 20px;
+  }
+
+  /* Bannière masquée en mobile */
+  .mega-banner {
+    display: none;
+  }
+}
