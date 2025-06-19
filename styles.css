@@ -127,18 +127,22 @@ body {
   padding: 20px;
 }
 
+header {
+  background-color: #222;
+}
+
+
 /* Barre de navigation principale */
 .navbar {
   background: linear-gradient(to right, rgb(255,255,255), rgb(231,250,254), rgb(255,255,255));
   border-bottom: 1px solid #ddd;
   position: relative;
-  z-index: 100; /* S'assure que la navbar est au-dessus du reste */
+  z-index: 100;
 }
 
-/* Conteneur centré pour la navigation, limite à 1200px de largeur */
 .nav-container {
   max-width: 1200px;
-  margin: 0 auto; /* Centre horizontalement */
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -146,17 +150,15 @@ body {
 }
 
 .logo {
-    display: flex; /* Alignement horizontal du logo image et du texte */
-    align-items: center; /* Alignement vertical centré */
+  display: flex;
+  align-items: center;
 }
 
-/* Image du logo */
 .logo img {
-    height: 50px; /* Hauteur fixe de l'image */
-    margin-right: 10px; /* Espace entre l'image et le texte */
+  height: 50px;
+  margin-right: 10px;
 }
 
-/* Liste horizontale des liens de navigation */
 .nav-links {
   list-style: none;
   display: flex;
@@ -165,14 +167,12 @@ body {
   padding: 0;
 }
 
-/* Chaque élément de la liste peut contenir un sous-menu */
 .nav-links li {
   position: relative;
 }
 
-/* Liens de la navbar */
 .nav-links a {
-  font-family:'Roboto-Black';
+  font-family: 'Roboto-Black';
   text-decoration: none;
   color: #333;
   padding: 15px 12px;
@@ -180,27 +180,28 @@ body {
   transition: color 0.3s;
 }
 
-/* Effet au survol */
 .nav-links a:hover {
   color: #007bff;
   text-decoration: underline;
 }
 
-/* Affichage du méga-menu lors du survol */
 .nav-links .dropdown:hover .mega-menu {
   display: flex;
 }
 .nav-links .dropdown:hover .mega-menuu {
   display: flex;
 }
+.nav-links .dropdown:hover .mega-menuuu {
+  display: flex;
+}
 
 /* -------- MEGA MENU -------- */
-.mega-menu,.mega-menuu {
-  display: none; /* Caché par défaut */
+.mega-menu, .mega-menuu, .mega-menuuu {
+  display: none;
   position: absolute;
-  top: 100%; /* Juste sous le lien parent */
+  top: 100%;
   overflow: auto;
-  width: auto; /* Même largeur que .nav-container */
+  width: auto;
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   padding: 20px 40px;
@@ -211,41 +212,30 @@ body {
   box-sizing: border-box;
 }
 
-.mega-menu{
-  left: 50%; /* Centre horizontalement */
-  transform: translateX(-86%); /* Centre par rapport au parent */
+.mega-menu {
+  left: 50%;
+  transform: translateX(-66%);
 }
-.mega-menuu{
-  left: 50%; /* Centre horizontalement */
-  transform: translateX(-30%); /* Centre par rapport au parent */
+.mega-menuuu {
+  left: 50%;
+  transform: translateX(-86%);
 }
-
-/* Animation douce d'apparition */
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.mega-menuu {
+  left: 50%;
+  transform: translateX(-30%);
 }
 
-/* Colonne dans le méga-menu */
 .mega-column {
-  flex: 0 0 180px; /* Taille fixe */
+  flex: 0 0 180px;
   padding-right: 20px;
 }
 
-/* Titre de colonne */
 .mega-column h4 {
   margin-bottom: 10px;
   color: #007bff;
   font-size: 16px;
 }
 
-/* Liens dans une colonne */
 .mega-column a {
   display: block;
   text-decoration: none;
@@ -260,7 +250,6 @@ body {
   text-decoration: underline;
 }
 
-/* Colonne avec une image promotionnelle */
 .mega-banner {
   flex: 0 0 200px;
   text-align: center;
@@ -276,6 +265,82 @@ body {
   margin: 10px 0;
   font-weight: bold;
   color: #007bff;
+}
+
+/* ------------------- VERSION MOBILE ------------------- */
+
+#mobile-menu {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: black;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-container {
+    padding: 0 20px;
+  }
+
+  /* Masquer le menu de base en mobile */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 10px 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    border-bottom: 1px solid #ddd;
+    z-index: 999;
+  }
+
+  /* Affichage actif du menu (par JS en ajoutant une classe 'active') */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    color: #333 !important;
+    padding: 12px 20px;
+    display: block;
+  }
+
+  .nav-links a:hover {
+    background-color: #f0f0f0;
+    color: #007bff;
+  }
+
+  #mobile-menu {
+    display: block;
+  }
+
+  /* Mega menu en version mobile */
+  .mega-menu, .mega-menuu, .mega-menuuu {
+    position: static;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 10px;
+    display: none;
+  }
+
+  /* Afficher le mega menu au clic (tu peux gérer avec du JS ensuite) */
+  .dropdown.active .mega-menu,
+  .dropdown.active .mega-menuu,
+  .dropdown.active .mega-menuuu {
+    display: flex;
+  }
+
+  .mega-column {
+    flex: 1;
+    padding: 10px 0;
+  }
+
+  .mega-banner {
+    margin-top: 10px;
+  }
 }
 
 /* Bouton stylisé */
@@ -383,6 +448,13 @@ background-position: center;
   padding-bottom: 8px;
 }
 
+#sigdetec{
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #0a3d62; /* bleu foncé */
+  padding-bottom: 8px;
+}
+
 .article-title {
   font-size: 1.5rem;
   margin-bottom: 12px;
@@ -455,49 +527,116 @@ flex-wrap: wrap;
   text-decoration: underline;
 }
 
-/* Responsive simple */
-@media (max-width: 600px) {
-  .section {
-    padding: 20px;
-    margin: 20px 15px;
-  }
+/* === SECTION DES CARTES D'ACTUALITÉS === */
+.news-section {
+  display: flex; /* Affiche les cartes en ligne (flexbox) */
+  flex-wrap: wrap; /* Permet le retour à la ligne si l'espace est insuffisant */
+  gap: 20px; /* Espace entre les cartes */
+  padding: 40px; /* Marge intérieure autour de la section */
+  background-color: #f5f5f5; /* Couleur de fond claire */
+  justify-content: center; /* Centre les cartes horizontalement */
+}
 
-  .section-title {
-    font-size: 1.6rem;
-  }
+.news-card {
+  background-color: #fff; /* Fond blanc de chaque carte */
+  width: 300px; /* Largeur fixe de la carte */
+  border-radius: 4px; /* Coins légèrement arrondis */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Ombre pour un effet de profondeur */
+  overflow: hidden; /* Cache ce qui dépasse du cadre */
+  display: flex; /* Organisation verticale du contenu interne */
+  flex-direction: column; /* Aligne les enfants verticalement */
+  transition: transform 0.3s ease; /* Transition douce */
+}
+
+.news-card:hover {
+  transform: scale(1.02); /* Grossissement de 5% */
+}
+
+.news-card img {
+  width: 100%; /* L’image prend toute la largeur de la carte */
+  height: 180px; /* Hauteur fixe de l’image */
+  object-fit: cover; /* Remplit sans déformer, en rognant si nécessaire */
 }
 
 
-/* -------- RESPONSIVE DESIGN -------- */
-@media (max-width: 992px) {
-  /* Empile les éléments verticalement en mode mobile */
-  .nav-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 
-  /* Liens en colonne */
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-  }
+/* Couleur personnalisée au hover pour chaque carte */
+.news-cardcartoanalyse:hover {
+  background-color: #f0fcfd; /* Bleu très pâle */
+}
 
-  /* Mega menu prend toute la largeur de l'écran */
-  .mega-menu, .mega-menuu {
-    width: 100vw;
-    left: 0;
-    transform: none; /* Annule le centrage */
-    flex-wrap: wrap;
-  }
+.news-cardteLedetection:hover {
+  background-color: #f9fdf5; /* Vert très pâle */
+}
 
-  /* Colonne prend presque la moitié de la largeur */
-  .mega-column {
-    flex: 1 1 45%;
-    margin-bottom: 20px;
-  }
+.news-cardwebgisdash:hover {
+  background-color: #fffaf2; /* Orange très pâle */
+}
 
-  /* Bannière masquée en mobile */
-  .mega-banner {
-    display: none;
-  }
+.news-cardformaspe:hover {
+  background-color: #f9f7fd; /* Violet très pâle */
+}
+
+.news-cardgeom:hover {
+  background-color: #fff5f9; /* Rose très pâle */
+}
+
+
+.card-content {
+  padding: 20px; /* Marge intérieure autour du contenu textuel */
+  flex-grow: 1; /* Permet au bloc de prendre l’espace disponible */
+}
+
+.card-content h2{
+  color: rgb(87, 87,87);
+}
+.card-content h3 {
+  font-size: 1rem; /* Taille du titre */
+  margin: 0 0 10px; /* Marge en bas uniquement */
+  color: #000; /* Couleur noire */
+}
+
+.card-content h3.cartoanalyse {
+  color: #00363a; /* Bleu très foncé tirant vers noir */
+}
+
+.card-content h3.teLedetection {
+  color: #2e4d1d; /* Vert profond et sérieux */
+}
+
+.card-content h3.webgisdash {
+  color: #4e2600; /* Orange-brun foncé lisible */
+}
+
+.card-content h3.formaspe {
+  color: #3e1254; /* Violet sombre et élégant */
+}
+
+.card-content h3.gEom {
+  color: #56021d; /* Rose/rouge profond et structuré */
+}
+
+
+
+.card-content p {
+  font-size: 0.9rem; /* Taille du texte de paragraphe */
+  color: #333; /* Gris foncé pour une bonne lisibilité */
+}
+
+.card-footer {
+  margin-top: 15px; /* Espace au-dessus du pied de carte */
+  display: flex; /* Alignement horizontal */
+  justify-content: space-between; /* Espace entre la date et le lien */
+  align-items: center; /* Alignement vertical centré */
+  font-size: 0.85rem; /* Taille plus petite pour les infos complémentaires */
+}
+
+.card-footer .date {
+  color: #555; /* Gris moyen pour la date */
+}
+
+.card-footer .link {
+  color: #62aa00; /* Même vert que pour les titres */
+  text-decoration: none; /* Supprime le soulignement */
+  font-weight: bold; /* Texte en gras */
 }
