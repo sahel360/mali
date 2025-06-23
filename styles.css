@@ -488,6 +488,16 @@ header {
 }
 
 
+/* Partie résumée masquée par défaut (sauf mobile) */
+.only-mobile {
+  display: none;
+}
+
+/* Partie détaillée visible par défaut */
+.full-details {
+  display: block;
+}
+
 /* --------- SECTION PRINCIPALE (contenant global) --------- */
 .dynamic-section {
   padding: 40px; /* Marge intérieure autour du contenu */
@@ -1065,6 +1075,35 @@ header {
     padding: 20px;
   }
 
+.only-mobile {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .full-details {
+    display: none;
+  }
+
+  .full-details.show {
+    display: block;
+  }
+
+  .toggle-button {
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+
+  .toggle-button:hover {
+    background-color: #16a085;
+  }
 
     .dynamic-section {
    padding: 60px 0 0 0; /* Ajoute un espace en haut de 60px */
