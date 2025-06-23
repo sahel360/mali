@@ -102,3 +102,15 @@ const scrollTopBtn = document.getElementById('scrollTop');
   scrollBottomBtn.addEventListener('click', () => {
     window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
   });
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.toggle-button').forEach(button => {
+      button.addEventListener('click', function () {
+        const block = this.closest('.texte-block');
+        const details = block.querySelector('.full-details');
+
+        details.classList.toggle('show');
+        this.textContent = details.classList.contains('show') ? 'Réduire' : 'Lire plus';
+      });
+    });
+  });
