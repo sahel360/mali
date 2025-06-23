@@ -5,177 +5,182 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sahel 360 Serices</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js"></script>
 </head>
 <body>
+
+<!-- Boutons flottants de navigation -->
+<div class="scroll-buttons">
+  <button id="scrollTop" title="Haut">↑</button>
+  <button id="scrollBottom" title="Bas">↓</button>
+</div>
+
+
 <header>
   <nav class="navbar">
-    <div class="nav-container">
-      <div class="logo">
-            <img src="logo.jpg" alt="Logo Sahel 360 Services">
-            <h1>Sahel 360 Services</h1>
+  <div class="nav-container">
+    <div class="logo">
+      <img src="logo.jpg" alt="Logo Sahel 360 Services">
+      <h1>Sahel 360 Services</h1>
+    </div>
+
+    <!-- BOUTON HAMBURGER AJOUTÉ -->
+    <div id="mobile-menu">&#9776;</div>
+
+    <ul class="nav-links">
+      <li><a href="#accueil">Accueil</a></li>
+
+      <li class="dropdown">
+        <a href="#a-propos">À propos</a>
+        <div class="mega-menuu">
+          <div class="mega-column">
+            <h4>Notre entreprise</h4>
+            <a href="#a-propos">Qui sommes-nous ?</a>
+            <a href="#a-propos">Notre mission</a>
+            <a href="#a-propos">Nos valeurs</a>
+          </div>
+          <div class="mega-column">
+            <h4>Équipe</h4>
+            <a href="#equipe">Direction</a>
+            <a href="#equipe">Experts techniques</a>
+            <a href="#equipe">Partenaires</a>
+          </div>
         </div>
+      </li>
 
-<!-- BOUTON HAMBURGER AJOUTÉ -->
-      <div id="mobile-menu">&#9776;</div>
+      <li class="dropdown">
+        <a href="#nos-services">Nos services ▾</a>
+        <div class="mega-menu">
+          <div class="mega-column">
+            <h4>Agriculture</h4>
+            <a href="#agriculture">Production végétale</a>
+            <a href="#agriculture">Irrigation</a>
+            <a href="#agriculture">Agroécologie</a>
+            <a href="#agriculture">Semences améliorées</a>
+            <a href="#agriculture">Formations agricoles</a>
+            <a href="#agriculture">Tout voir</a>
+          </div>
+          <div class="mega-column">
+            <h4>Élevage</h4>
+            <a href="#nos-services">Bétail</a>
+            <a href="#nos-services">Nutrition animale</a>
+            <a href="#nos-services">Santé animale</a>
+            <a href="#nos-services">Infrastructures d’élevage</a>
+            <a href="#nos-services">Tout voir</a>
+          </div>
+          <div class="mega-column">
+            <h4>Hydraulique</h4>
+            <a href="#nos-services">Forages</a>
+            <a href="#nos-services">Pompes et équipements</a>
+            <a href="#nos-services">Gestion de l’eau</a>
+            <a href="#nos-services">Études hydrogéologiques</a>
+            <a href="#nos-services">Tout voir</a>
+          </div>
+          <div class="mega-column">
+            <h4>Services spécialisés</h4>
+            <a href="#nos-services">Logistique</a>
+            <a href="#nos-services">Formation professionnelle</a>
+            <a href="#nos-services">Conseil stratégique</a>
+            <a href="#nos-services">Gestion de crises</a>
+            <a href="#nos-services">Tout voir</a>
+          </div>
+          <div class="mega-banner">
+            <a href="#nos-services"><img src="images/tn_agriculture.jpg" alt="services" title="Clique Pour en savoir plus!"></a>
+            <p>Des solutions intégrées pour vos besoins en agriculture, élevage, hydraulique et plus</p>
+            <a href="#nos-services" class="btn">En savoir plus</a>
+          </div>
+        </div>
+      </li>
 
-      <ul class="nav-links">
-  <li><a href="#">Accueil</a></li>
+      <li class="dropdown">
+        <a href="#sigdetec">SIG & Télédétection ▾</a>
+        <div class="mega-menuuu">
+          <div class="mega-column">
+            <h4>Cartographie & Analyse</h4>
+            <a href="#cartoanalyse">Cartes thématiques</a>
+            <a href="#cartoanalyse">Analyse spatiale avancée</a>
+          </div>
+          <div class="mega-column">
+            <h4>Télédétection</h4>
+            <a href="#teLedetection">Images satellites</a>
+            <a href="#teLedetection">Détection de changements</a>
+            <a href="#teLedetection">Suivi environnemental</a>
+          </div>
+          <div class="mega-column">
+            <h4>Web GIS & Dashboards</h4>
+            <a href="#webgisdash">Plateformes interactives</a>
+            <a href="#webgisdash">Visualisation en temps réel</a>
+          </div>
+          <div class="mega-column">
+            <h4>Formations spécialisées</h4>
+            <a href="#formaspe">QGIS, ArcGIS, GEE</a>
+            <a href="#formaspe">Ateliers ONG</a>
+          </div>
+          <div class="mega-banner">
+            <a href="#gEom">
+              <img src="images/tn_geomatique.png" alt="geomatique" title="Clique Pour en savoir plus!">
+            </a>
+            <p>Explorez la puissance des données spatiales avec nos solutions SIG</p>
+            <a href="#contact" class="btn">Contactez-nous</a>
+          </div>
+        </div>
+      </li>
 
-  <li class="dropdown">
-    <a href="#">À propos</a>
-    <div class="mega-menuu">
-      <div class="mega-column">
-        <h4>Notre entreprise</h4>
-        <a href="#">Qui sommes-nous ?</a>
-        <a href="#">Notre mission</a>
-        <a href="#">Nos valeurs</a>
-      </div>
-      <div class="mega-column">
-        <h4>Équipe</h4>
-        <a href="#">Direction</a>
-        <a href="#">Experts techniques</a>
-        <a href="#">Partenaires</a>
-      </div>
-    </div>
-  </li>
-
-  <li class="dropdown">
-    <a href="#">Nos services ▾</a>
-    <div class="mega-menu">
-      <div class="mega-column">
-        <h4>Agriculture</h4>
-        <a href="#">Production végétale</a>
-        <a href="#">Irrigation</a>
-        <a href="#">Agroécologie</a>
-        <a href="#">Semences améliorées</a>
-        <a href="#">Formations agricoles</a>
-        <a href="#">Tout voir</a>
-      </div>
-      <div class="mega-column">
-        <h4>Élevage</h4>
-        <a href="#">Bétail</a>
-        <a href="#">Nutrition animale</a>
-        <a href="#">Santé animale</a>
-        <a href="#">Infrastructures d’élevage</a>
-        <a href="#">Tout voir</a>
-      </div>
-      <div class="mega-column">
-        <h4>Hydraulique</h4>
-        <a href="#">Forages</a>
-        <a href="#">Pompes et équipements</a>
-        <a href="#">Gestion de l’eau</a>
-        <a href="#">Études hydrogéologiques</a>
-        <a href="#">Tout voir</a>
-      </div>
-      <div class="mega-column">
-        <h4>Services spécialisés</h4>
-        <a href="#">Logistique</a>
-        <a href="#">Formation professionnelle</a>
-        <a href="#">Conseil stratégique</a>
-        <a href="#">Gestion de crises</a>
-        <a href="#">Tout voir</a>
-      </div>
-      <div class="mega-banner">
-        <a href="#"><img src="images/tn_agriculture.jpg" alt="services" title="Clique Pour en savoir plus!"></a>
-        <p>Des solutions intégrées pour vos besoins en agriculture, élevage, hydraulique et plus</p>
-        <a href="#" class="btn">En savoir plus</a>
-      </div>
-    </div>
-  </li>
-
-
-  <li class="dropdown">
-  <a href="#sigdetec">SIG & Télédétection ▾</a>
-  <div class="mega-menuuu">
-    <div class="mega-column">
-      <h4>Cartographie & Analyse</h4>
-      <a href="#">Cartes thématiques</a>
-      <a href="#">Analyse spatiale avancée</a>
-    </div>
-    <div class="mega-column">
-      <h4>Télédétection</h4>
-      <a href="#">Images satellites (Sentinel, Landsat...)</a>
-      <a href="#">Classification & détection de changements</a>
-      <a href="#">Suivi des cultures & environnement</a>
-    </div>
-    <div class="mega-column">
-      <h4>Web GIS & Dashboards</h4>
-      <a href="#">Plateformes interactives</a>
-      <a href="#">Visualisation en temps réel</a>
-    </div>
-    <div class="mega-column">
-      <h4>Formations spécialisées</h4>
-      <a href="#">QGIS, ArcGIS, GEE</a>
-      <a href="#">Ateliers pour ONG & entreprises</a>
-    </div>
-    <div class="mega-banner">
-      <a href="#">
-      <img src="images/tn_geomatique.png" alt="geomatique" title="Clique Pour en savoir plus!"></a>
-      <p>Explorez la puissance des données spatiales avec nos solutions SIG</p>
-      <a href="#" class="btn">Contactez-nous</a>
-    </div>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </div>
-</li>
+</nav>
 
-
-  <li><a href="#">Contact</a></li>
-</ul>
-
-    </div>
-  </nav>
 </header>
 
-<section id="accueil" class="section accueil">
-
-  <h2 class="section-title">Bienvenue chez Sahel 360 Services</h2>
-  <p class="section-text">
-    Sahel 360 Services est une entreprise malienne engagée à offrir des solutions intégrées dans les secteurs de l’agriculture, de l’élevage, de l’hydraulique, de la logistique, de la formation, du conseil et de la gestion des crises.
-  </p>
-  <img src="images/accueil.jpg" alt="Vue générale de l’équipe Sahel 360 sur le terrain" class="imgwlc">
-
-  <p class="ambition">
-    Notre ambition : accompagner le développement durable à travers l’innovation, l’expertise technique et une approche centrée sur les besoins réels de nos clients.
-  </p>
+<section id="accueil" class="hero-section">
+  <div class="hero-overlay">
+    <div class="hero-text">
+      <h2 class="section-title">Bienvenue chez Sahel 360 Services</h2>
+      <p class="section-text">
+        Sahel 360 Services est une entreprise malienne engagée à offrir des solutions intégrées dans les secteurs de l’agriculture, de l’élevage, de l’hydraulique, de la logistique, de la formation, du conseil et de la gestion des crises.
+      </p>
+      <p class="ambition">
+        Notre ambition : accompagner le développement durable à travers l’innovation, l’expertise technique et une approche centrée sur les besoins réels de nos clients.
+      </p>
+    </div>
+  </div>
 </section>
 
-<section id="a-propos" class="section a-propos">
-  <h2 class="section-title">À propos</h2>
 
-<div class=carton>
-  <article id="notre-entreprise" class="carte">
-    <h3 class="article-title">Notre entreprise</h3>
-    <h4 class="article-subtitle">Qui sommes-nous ?</h4>
-    <p class="article-text">
-      Sahel 360 Services est une société privée créée pour répondre aux besoins croissants des communautés rurales et urbaines dans les domaines clés du développement socio-économique au Mali et en Afrique de l’Ouest.
-    </p>
-    <h4 class="article-subtitle">Notre mission</h4>
-    <p class="article-text">
-      Fournir des services de haute qualité dans les secteurs agro-sylvo-pastoraux et hydrauliques, avec une approche durable, inclusive et axée sur les résultats.
-    </p>
-    <h4 class="article-subtitle">Nos valeurs</h4>
-    <p class="article-text">
-      Intégrité, Excellence, Innovation, Responsabilité sociale, Partenariat.
-    </p>
-  </article>
+<section id="a-propos" class="dynamic-section">
+  
 
-  <article id="equipe" class="carte">
-    <h3 class="article-title">Équipe</h3>
-    <h4 class="article-subtitle">Direction</h4>
-    <p class="article-text">
-      Composée de professionnels aguerris du secteur agricole, hydraulique et du développement, notre équipe de direction guide la stratégie de l’entreprise.
-    </p>
-    <h4 class="article-subtitle">Experts techniques</h4>
-    <p class="article-text">
-      Ingénieurs agronomes, hydrogéologues, vétérinaires, logisticiens, formateurs certifiés… tous engagés dans la réussite de vos projets.
-    </p>
-    <h4 class="article-subtitle">Partenaires</h4>
-    <p class="article-text">
-      ONG, collectivités, bailleurs internationaux, structures étatiques et entreprises privées collaborent avec nous pour des impacts durables.
-    </p>
-  </article>
-</div>
-<img src="images/entreprise.jpg" alt="Membres de l’équipe en réunion" class="section-img">
+  <div class="content">
+    <div class="image-side">
+      <img src="images/entreprise.jpg" alt="Entreprise" class="section-imgg active" data-image="a-propos">
+      <img src="images/equipe.jpg" alt="Équipe" class="section-imgg" data-image="equipe">
+    </div>
+
+    <div class="text-side">
+      <div class="texte-block active" id="a-propos">
+        <h3>Notre entreprise</h3>
+        <p>Sahel 360 Services est une société privée créée pour répondre aux besoins croissants des communautés rurales et urbaines dans les domaines clés du développement socio-économique au Mali et en Afrique de l’Ouest.</p>
+        <p>Mission : Fournir des services de haute qualité dans les secteurs agro-sylvo-pastoraux et hydrauliques.</p>
+        <p>Valeurs : Intégrité, Excellence, Innovation, Responsabilité sociale, Partenariat.</p>
+      </div>
+
+      <div class="texte-block" id="equipe">
+        <h3>Notre équipe</h3>
+        <p>Professionnels aguerris dans l'agriculture, l'hydraulique et le développement.</p>
+        <p>Experts : Ingénieurs, vétérinaires, formateurs certifiés, etc.</p>
+        <p>Partenaires : ONG, bailleurs, structures publiques et privées.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab-button active" data-target="a-propos">À propos</button>
+    <button class="tab-button" data-target="equipe">Équipe</button>
+  </div>
+
 </section>
+
 
 <section id="nos-services" class="section nos-services">
   <h2 class="section-title">Nos services</h2>
@@ -193,43 +198,84 @@
       </ul>
     </div>
     
-</article>
 
-<div class="carton">
-  <article id="elevage" class="carte">
-    <img src="images/elevage.jpg" alt="Photo de l'elevage" class="imgcarte">
-    <h3 class="article-title">Élevage</h3>
-    <ul class="service-list">
-      <li><strong>Bétail :</strong> Appui à l’élevage bovin, ovin, caprin et avicole.</li>
-      <li><strong>Nutrition animale :</strong> Formulation et distribution d’aliments équilibrés.</li>
-      <li><strong>Santé animale :</strong> Services vétérinaires, vaccination, suivi épidémiologique.</li>
-      <li><strong>Infrastructures d’élevage :</strong> Construction de bergeries, étables, poulaillers modernes.</li>
-    </ul>
-  </article>
-
-  <article id="hydraulique" class="carte">
-    <img src="images/hydraulique.jpg" alt="Photo de l'elevage" class="imgcarte">
-    <h3 class="article-title">Hydraulique</h3>
-    <ul class="service-list">
-      <li><strong>Forages :</strong> Études hydrogéologiques, réalisation de forages profonds et moyens.</li>
-      <li><strong>Pompes et équipements :</strong> Installation de pompes solaires, manuelles et électriques.</li>
-      <li><strong>Gestion de l’eau :</strong> Suivi de qualité, entretien de réseaux hydrauliques.</li>
-      <li><strong>Études techniques :</strong> Réalisation de diagnostics hydrauliques.</li>
-    </ul>
-  </article>
-
-  <article id="services-specialises" class="carte">
-    <img src="images/logistique.jpg" alt="Photo de l'elevage" class="imgcarte">
-    <h3 class="article-title">Services spécialisés</h3>
-    <ul class="service-list">
-      <li><strong>Logistique :</strong> Transport de matériel agricole et produits, gestion de la chaîne d’approvisionnement.</li>
-      <li><strong>Formation professionnelle :</strong> Programmes sur mesure pour collectivités et ONG.</li>
-      <li><strong>Conseil stratégique :</strong> Appui en gestion de projets, planification rurale et politique agricole.</li>
-      <li><strong>Gestion de crises :</strong> Interventions d’urgence, distribution de kits, évaluation post-catastrophe.</li>
-    </ul>
-  </article>
 </div>
 </section>
+
+<section class="services-section">
+
+  <!-- Élevage -->
+  <article class="section-pro">
+    <div class="section-image">
+      <img src="images/elevage.jpg" alt="Élevage">
+    </div>
+    <div class="section-content">
+      <p class="section-label">Pourquoi Sahel 360</p>
+      <h3 class="section-title">Soutenir l’élevage grâce à l’expertise</h3>
+      <p class="section-text">
+        Nous accompagnons les éleveurs avec des solutions durables, adaptées à chaque espèce et à chaque environnement.
+        Notre approche combine nutrition, santé, infrastructures et conseil technique.
+      </p>
+      <ul class="service-list">
+        <li><strong>Bétail :</strong> Appui à l’élevage bovin, ovin, caprin et avicole.</li>
+        <li><strong>Nutrition animale :</strong> Formulation et distribution d’aliments équilibrés.</li>
+        <li><strong>Santé animale :</strong> Services vétérinaires, vaccination, suivi épidémiologique.</li>
+        <li><strong>Infrastructures d’élevage :</strong> Construction de bergeries, étables, poulaillers modernes.</li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- Hydraulique -->
+  <article class="section-pro">
+    
+    <div class="section-content">
+      <p class="section-label">Accès à l'eau</p>
+      <h3 class="section-title">Hydraulique rurale et durable</h3>
+      <p class="section-text">
+        Nous assurons l’étude, l’installation et l’entretien des systèmes hydrauliques dans les zones rurales.
+        Notre objectif : garantir l’accès à l’eau en toute saison.
+      </p>
+      <ul class="service-list">
+        <li><strong>Forages :</strong> Études hydrogéologiques, réalisation de forages profonds et moyens.</li>
+        <li><strong>Pompes et équipements :</strong> Installation de pompes solaires, manuelles et électriques.</li>
+        <li><strong>Gestion de l’eau :</strong> Suivi de qualité, entretien de réseaux hydrauliques.</li>
+        <li><strong>Études techniques :</strong> Réalisation de diagnostics hydrauliques.</li>
+      </ul>
+    </div>
+<div class="imcard">
+<div class="section-imaged">
+      <img src="images/hydraulique.jpg" alt="Hydraulique">
+    </div>
+  </div>
+
+  </article>
+
+  <!-- Services spécialisés -->
+  <article class="section-pro">
+    <div class="imccard">
+    <div class="section-image">
+      <img src="images/logistique.jpg" alt="Services spécialisés">
+  </div>
+</div>
+
+    <div class="section-content">
+      <p class="section-label">Solutions intégrées</p>
+      <h3 class="section-title">Des services spécialisés à haute valeur ajoutée</h3>
+      <p class="section-text">
+        Nous proposons des solutions sur mesure pour répondre aux besoins des collectivités, ONG et exploitants :
+        logistique, formation, stratégie et gestion de crises.
+      </p>
+      <ul class="service-list">
+        <li><strong>Logistique :</strong> Transport de matériel agricole et produits, gestion de la chaîne d’approvisionnement.</li>
+        <li><strong>Formation professionnelle :</strong> Programmes sur mesure pour collectivités et ONG.</li>
+        <li><strong>Conseil stratégique :</strong> Appui en gestion de projets, planification rurale et politique agricole.</li>
+        <li><strong>Gestion de crises :</strong> Interventions d’urgence, distribution de kits, évaluation post-catastrophe.</li>
+      </ul>
+    </div>
+  </article>
+
+</section>
+
 
 
 <h2 id="sigdetec">SIG et télédetection</h2>
@@ -311,20 +357,84 @@
 </div>
 </section>
 
-<section id="contact" class="section contact">
-  <h2 class="section-title">Contact</h2>
-  <address class="contact-info">
-    <p><strong>Adresse :</strong> Quartier ACI 2000, Bamako, Mali</p>
-    <p><strong>Téléphone :</strong> +223 76 00 00 00</p>
-    <p><strong>Email :</strong> <a href="mailto:contact@sahel360.ml">contact@sahel360.ml</a></p>
-    <p><strong>Horaires :</strong> Lundi – Vendredi : 8h – 17h30</p>
-  </address>
+<section id="contact" class="contact-section">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>Contact</h2>
+      <address>
+        <p><strong>Adresse :</strong> Quartier ACI 2000, Bamako, Mali</p>
+        <p><strong>Téléphone :</strong> +223 76 00 00 00</p>
+        <p><strong>Email :</strong> <a href="mailto:contact@sahel360.ml">contact@sahel360.ml</a></p>
+        <p><strong>Horaires :</strong> Lundi – Vendredi : 8h – 17h30</p>
+      </address>
+    </div>
+
+    <div class="contact-image">
+            <img src="images/contact.png" alt="Contact Sahel 360 Services">
+    </div>
+  
 </section>
-<footer>
-  <p><a href="politique-confidentialite.html">Politique de confidentialité</a> | 
-     <a href="conditions-utilisation.html">Conditions d'utilisation</a></p>
+
+
+
+
+<footer class="site-footer">
+  <div class="container">
+    <p>
+      <a href="politique-confidentialite.html">Politique de confidentialité</a> |
+      <a href="conditions-utilisation.html">Conditions d'utilisation</a>
+    </p>
+  </div>
+
+  <div class="social-icons">
+         <!-- Bouton WhatsApp -->
+<a href="https://wa.me/22376856631?text=Bonjour!%20Je%20souhaite%20en%20savoir%20plus%20sur%20votre%20site%20web."
+   target="_blank"
+   class="social-button whatsapp-button"
+   aria-label="Contactez-nous sur WhatsApp">
+  <img src="icone/wa.png" alt="WhatsApp" />
+</a>
+
+<!-- Bouton Facebook -->
+<a href="https://web.facebook.com/ibrahimdjime.diakite.3"
+   target="_blank"
+   class="social-button facebook-button"
+   aria-label="Partager sur Facebook">
+  <img src="icone/facebook.png" alt="Facebook" />
+</a>
+
+<!-- Bouton Twitter -->
+<a href="https://twitter.com/DiakitIbra19810"
+   target="_blank"
+   class="social-button twitter-button"
+   aria-label="Partager sur Twitter">
+  <img src="icone/x.png" alt="Twitter" />
+</a>
+
+<!-- Bouton Instagram -->
+<a href="https://www.instagram.com/ibrahim_djime_diakite"
+   target="_blank"
+   class="social-button instagram-button"
+   aria-label="Voir Instagram">
+  <img src="icone/insta.png" alt="Instagram" />
+</a>
+
+<!-- Bouton TikTok -->
+<a href="https://www.tiktok.com/@ibradiak0"
+   target="_blank"
+   class="social-button tiktok-button"
+   aria-label="Partager sur TikTok">
+  <img src="icone/tiktok.png" alt="TikTok" />
+</a>
+        </div>
+        <p>&copy; 2025 Sahel 360 Services. Site conçu par Ibrahim Djimé Diakité. Tous droits réservés.</p>
+
 </footer>
 
+
+
+
+<script src="menu.js"></script>
 
 </body>
 </html>
