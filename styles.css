@@ -1055,6 +1055,7 @@ header {
 
 
 .content {
+  display: block; /* empile image + texte */
   flex-direction: column;
   gap: 0;
   position: relative;
@@ -1076,7 +1077,7 @@ header {
   /* Il faut ajouter ceci pour que la hauteur suive le contenu sur mobile */
   min-height: 100%;
 
-  z-index: 1;
+  z-index: 0;
   overflow: hidden;
 }
 
@@ -1095,8 +1096,11 @@ header {
 }
 
 .section-imgg.active {
-  opacity: 1;
-  visibility: visible;
+  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    opacity: 1; /* ← manquant */
+  visibility: visible; /* ← manquant */
   pointer-events: auto;
 }
 
@@ -1106,6 +1110,7 @@ header {
   width: 100%;
   padding: 30px 15px;
   z-index: 2;
+  background: none; /* pas de fond opaque ici */
 }
 
 .texte-block {
@@ -1142,6 +1147,32 @@ header {
   margin-top: 20px;
 }
 
+
+.imccard, .imcard {
+    width: 100%;              /* Utilise toute la largeur disponible */
+    height: auto;             /* Hauteur automatique pour conserver le ratio */
+  }
+
+  .imccard img, .imcard img {
+    height: auto;             /* Ajuste la hauteur selon le contenu */
+    object-fit: contain;      /* Évite le rognage sur petit écran */
+  }
+
+  .section-image img, .section-imaged {
+    width: 100%;              /* Largeur responsive */
+    height: auto;             /* Hauteur automatique */
+    box-shadow: 10px -10px 15px rgba(176, 176, 176, 0.6); /* Ombre adoucie */
+    transform: none;          /* Supprime les effets d’inclinaison sur mobile */
+    border-radius: 20px;      /* Coins arrondis plus doux sur petit écran */
+  }
+
+  .section-image img {
+    border-radius: 80px 0 65px 0;      /* Uniformise tous les coins */
+  }
+
+  .section-imaged {
+    border-radius: 0 90px 0 70px;      /* Même traitement ici */
+  }
 
 
   .contact-grid {
