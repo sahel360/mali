@@ -1,0 +1,329 @@
+/* Définir les polices personnalisées */
+@font-face {
+    font-family: 'INGAME';
+    src: url('pol/INGAME.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PlayfairDisplaySC-Black';
+    src: url('pol/PlayfairDisplaySC-Black.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Robot-Rebels';
+    src: url('pol/Robot-Rebels.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('pol/Roboto-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Boul';
+    src: url('pol/Boul.otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PlayfairDisplaySC-Bold';
+    src: url('pol/PlayfairDisplaySC-Bold.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Sobatyan-Regular';
+    src: url('pol/Sobatyan-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto-MediumItalic';
+    src: url('pol/Roboto-MediumItalic.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'MilestoneBrush';
+    src: url('pol/MilestoneBrush.otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Rostack';
+    src: url('pol/Rostack.otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto-Black';
+    src: url('pol/Roboto-Black.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Matemasie-Regular';
+    src: url('pol/Matemasie-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'NewAmsterdam-Regular';
+    src: url('pol/NewAmsterdam-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'NerkoOne-Regular';
+    src: url('pol/NerkoOne-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto-Medium';
+    src: url('pol/Roboto-Medium.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('pol/Roboto-Bold.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'DMSerifText-Regular';
+    src: url('pol/DMSerifText-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Style général du corps de la page */
+body {
+  font-family:'Roboto-Medium','Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police lisible et moderne */
+  margin: 0; /* Supprime les marges par défaut du navigateur autour de la page */
+  font-family: Arial, sans-serif; /* Définit la police principale pour le texte */
+  background: #fff; /* Couleur de fond blanche */
+  color: #111; /* Couleur du texte : noir très foncé (presque noir pur) */
+}
+
+/* En-tête de la section légale */
+.legal-header {
+  display: flex; /* Utilise Flexbox pour aligner les éléments horizontalement */
+  align-items: center; /* Centre les éléments verticalement dans le header */
+  padding: 1rem; /* Ajoute un espacement intérieur de 1 rem autour */
+  padding-left: 20%; /* Ajoute un grand espace uniquement à gauche */
+  background-color: #ffffff; /* Fond blanc */
+  border-bottom: 1px solid #ccc; /* Bord inférieur gris clair (séparation visuelle) */
+}
+
+/* Logo dans l'en-tête */
+.legal-logo {
+  height: 100px; /* Hauteur fixe de 60 pixels */
+  max-width: 200px; /* Largeur maximale pour éviter l’agrandissement excessif */
+  object-fit: contain; /* Conserve le ratio du logo sans le rogner */
+}
+
+/* Conteneur principal de la page, contient la sidebar et le contenu principal */
+.container {
+  line-height: 1.6;
+background-color: rgb(241, 250, 241);
+  font-family:'Roboto-Medium','Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police lisible et moderne */
+  display: flex; /* Utilise Flexbox pour placer la sidebar et le contenu côte à côte */
+  min-height: 100%; /* Hauteur minimale = 100% de la hauteur de la fenêtre */
+}
+
+/* Barre latérale gauche pour grand écran */
+.sidebar-desktop {
+  width: 250px;
+  background-color: rgb(222, 243, 223);
+  border-right: 1px solid #ddd;
+  padding: 1.5rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar-desktop h2 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar-desktop ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar-desktop ul li {
+  margin-bottom: 1rem;
+}
+
+.sidebar-desktop ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.sidebar-desktop ul li a:hover {
+  color: rgb(186, 102, 27);
+  font-weight: bold;
+}
+
+/* Cacher la sidebar mobile par défaut (grands écrans) */
+#sidebar {
+  display: none;
+}
+
+
+
+/* Contenu principal (à droite de la sidebar) */
+.main-content {
+  background-color: rgb(241, 250, 241);
+  flex: 1; /* Prend tout l'espace restant */
+  padding: 2rem 3rem; /* Espacement intérieur vertical : 2rem ; horizontal : 3rem */
+  max-width: 900px; /* Largeur maximale du contenu (évite les lignes trop longues) */
+}
+
+/* Titres principaux */
+h1 {
+  font-size: 2.2rem; /* Grande taille pour les titres */
+  margin-bottom: 1rem; /* Espace sous le titre */
+}
+
+/* Sous-titres */
+h2 {
+  font-size: 1.6rem; /* Taille plus petite que h1 */
+  margin-top: 2.5rem; /* Grand espace au-dessus */
+  margin-bottom: 0.5rem; /* Petit espace en dessous */
+}
+
+/* Paragraphe normal */
+p {
+  font-size: 1rem; /* Taille de texte normale */
+  line-height: 1.6; /* Hauteur de ligne pour aérer le texte */
+}
+
+/* Style pour la date (ex : dernière mise à jour) */
+.date {
+  font-style: italic; /* Italique */
+  color: #555; /* Gris moyen pour indiquer un contenu moins important */
+  margin-bottom: 2rem; /* Espace sous la date */
+}
+
+
+@media all and (max-width: 1024px) {
+
+  /* Cacher la version desktop sur mobile */
+.sidebar-desktop {
+  display: none;
+}
+
+/* Activer la version mobile avec #sidebar (identifiant unique) */
+#sidebar {
+  display: block; /* Ajoute cette ligne */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0; /* Cachée par défaut */
+  height: 100%;
+  padding-left: 0;
+  transition: width 0.5s ease;
+  overflow-x: hidden;
+  background-color: #34495e;
+  z-index: 1000;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+/* Version visible quand la classe "active" est ajoutée dynamiquement */
+#sidebar.active {
+  width: 250px;
+  padding-top: 60px;
+  padding-left: 1.5rem;
+}
+
+#sidebar h2 {
+  color: white;
+}
+
+#sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#sidebar ul li {
+  padding: 15px 0;
+}
+
+#sidebar ul li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 15px 20px;
+  transition: 0.3s;
+  white-space: normal; /* empêche le texte de déborder */
+}
+
+#sidebar ul li a:hover {
+  background-color: #1abc9c;
+  padding-left: 25px;
+}
+
+/* autres styles .menu-icon, .sidebar ul, etc., restent inchangés */
+
+
+  .menu-icon {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1001;
+    color: #fff;
+    background-color: rgb(34, 104, 36);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+  }
+
+  .menu-icon:hover {
+    background-color: rgb(16, 48, 17);
+  }
+
+  
+
+  .container {
+    flex-direction: column;
+  }
+
+  .main-content {
+    padding: 1.5rem;
+    margin-left: 0;
+  }
+}
