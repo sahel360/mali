@@ -960,7 +960,7 @@ header {
   }
 
 #accueil {
-  margin-top: 100px;
+  margin-top: 55px;
 }
   .navbar {
     position: fixed;
@@ -971,7 +971,7 @@ header {
     z-index: 1000;
   }
 
- @media screen and (max-width: 1024px) {
+
   .hero-section {
     position: relative;
     width: 100%;
@@ -1022,7 +1022,6 @@ header {
     line-height: 1.6;
     word-wrap: break-word;
   }
-}
 
 
   .logo img {
