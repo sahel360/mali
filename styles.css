@@ -982,6 +982,9 @@ header {
     width: 100%;
     z-index: 1000;
   }
+  #accueil{
+    margin-top: 55px;
+  }
 
   .hero-section {
     margin-top: 60px;
