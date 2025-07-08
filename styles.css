@@ -144,6 +144,19 @@ header {
   z-index: 9999;
 }
 
+.scroll-buttons {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Lors du scroll → rendre visible */
+.scroll-buttons.scrolling {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
 /* Bouton Haut – plus haut et plus à gauche */
 #scrollTop {
   bottom: 80%; /* Positionne le bouton à 20% de la hauteur de la fenêtre d'affichage, ce qui le place au centre verticalement. */
@@ -435,6 +448,8 @@ header {
   flex-wrap: wrap; /* Permet de passer à la ligne sur petits écrans */
 }
 
+
+
 .imccard, .imcard {
   width: 400px;              /* Définit la largeur fixe du conteneur de l’image */
   height: 250px;             /* Hauteur fixe (même si ton commentaire dit 200px) */
@@ -482,11 +497,17 @@ header {
   display: block;
 }
 
-/* --------- SECTION PRINCIPALE (contenant global) --------- */
 .dynamic-section {
-  padding: 40px; /* Marge intérieure autour du contenu */
-  background-color: white; /* Fond blanc */
-  font-family: sans-serif; /* Police sans empattement pour un look moderne */
+  padding: 40px;
+  font-family: sans-serif;
+  background: linear-gradient(135deg, 
+    rgb(235,235,254),  /* Bleu pastel pâle */
+    rgb(245,235,250),  /* Lavande claire */
+    rgb(248,247,251)   /* Presque blanc, légèrement gris-violet */
+  );
+  background-size: 400% 400%;
+  animation: scrollBgMove 15s ease infinite;
+  transition: background 0.4s ease;
 }
 
 /* --------- ONGLET (barre de navigation entre les contenus) --------- */
@@ -690,6 +711,23 @@ header {
   text-decoration: underline; /* Soulignement au survol */
 }
 
+@keyframes pulseText {
+  0%, 95%, 100% {
+    transform: scale(1); /* Taille normale */
+  }
+  96%, 97% {
+    transform: scale(1.12); /* Agrandissement brutal */
+  }
+}
+
+.contact-info p,
+.contact-info h2,
+.contact-info a {
+  display: inline-block;
+  animation: pulseText 10s steps(1, end) infinite; /* steps(1, end) = aucune interpolation (effet saccadé) */
+}
+
+
 /* === SECTION DES CARTES D'ACTUALITÉS === */
 .news-section {
   display: flex; /* Organisation en ligne */
@@ -699,6 +737,36 @@ header {
   background-color: #f5f5f5; /* Fond gris clair */
   justify-content: center; /* Centrage horizontal */
 }
+
+.news-section {
+  position: relative; 
+  /* Permet de positionner des éléments enfants en absolu si besoin (utile pour des effets superposés ou des décorations internes) */
+
+  background: linear-gradient(135deg, #fdf6e3, #f5f5dc, #eee);
+  /* Crée un dégradé linéaire en diagonale (135°) avec trois couleurs claires, douces pour un fond esthétique */
+
+  background-size: 400% 400%;
+  /* Agrandit artificiellement la taille du fond pour permettre une animation de déplacement fluide et visible */
+
+  animation: scrollBgMove 10s ease infinite;
+  /* Applique l’animation définie plus bas, qui fait "glisser" le fond sur 10 secondes en boucle infinie avec une transition douce */
+
+  transition: background 0.4s ease;
+  /* Ajoute une transition douce si on change le fond (par exemple lors d’un hover) */
+}
+
+@keyframes scrollBgMove {
+  0% { background-position: 0% 50%; }
+  /* Début de l'animation : le fond commence à gauche */
+
+  50% { background-position: 100% 50%; }
+  /* Milieu de l'animation : le fond s’est déplacé complètement vers la droite */
+
+  100% { background-position: 0% 50%; }
+  /* Fin de l'animation : retour à la position de départ pour boucler */
+}
+
+
 
 .news-card {
   background-color: #fff; /* Fond blanc */
@@ -940,6 +1008,30 @@ header {
   transform: scale(1.1);
 }
 
+.site-footer {
+  background: linear-gradient(270deg,  
+    #d2b48c,  /* Marron clair */
+    #f5f5dc,  /* Beige */
+    #e6d3b3,  /* Sable chaud */
+    #e0c1a0,  /* Terre rosée claire */
+    #f0e0d6,  /* Crème moka */
+    #e9caa8,  /* Café glacé doux */
+    #f4e3d7,  /* Rose poudré */
+    #d2b48c   /* Retour */
+  );
+  background-size: 800% 800%;
+  animation: gradientMove 180s ease-in-out infinite;
+  color: #222; /* Texte noir ou presque noir */
+}
+
+@keyframes gradientMove {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+
 
 /* Desktop uniquement (au-dessus de 1024px) */
 @media screen and (min-width: 1025px) {
@@ -996,6 +1088,7 @@ header {
     position: relative;       /* ✅ Important pour que le contenu prenne sa place */
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 2;
+    height: auto;
     padding: 20px;
     display: block;
     width: 100%;
@@ -1266,6 +1359,15 @@ header {
 
   .contact-image {
     display: none;
+  }
+
+  .contact-info p,
+  .contact-info a {
+    animation: none; /* Supprime l’animation pour les paragraphes et les liens */
+  }
+
+  .contact-info h2 {
+    animation: pulseText 10s steps(1, end) infinite; /* Animation conservée uniquement sur le h2 */
   }
 
   .social-button {
