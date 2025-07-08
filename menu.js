@@ -72,45 +72,33 @@ console.log("Le fichier JavaScript est bien chargé");
   });
 
 const scrollTopBtn = document.getElementById('scrollTop');
-  const scrollBottomBtn = document.getElementById('scrollBottom');
+const scrollBottomBtn = document.getElementById('scrollBottom');
+const scrollContainer = document.querySelector('.scroll-buttons');
 
-  // Gère l'affichage des boutons selon la position
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY; // Position verticale
-    const height = document.documentElement.scrollHeight - window.innerHeight;
+let scrollTimeout;
 
-    if (scrollY < 100) {
-      // Tout en haut => afficher seulement le bouton Bas
-      scrollBottomBtn.style.display = 'block';
-      scrollTopBtn.style.display = 'none';
-    } else if (scrollY >= height - 100) {
-      // Tout en bas => afficher seulement le bouton Haut
-      scrollTopBtn.style.display = 'block';
-      scrollBottomBtn.style.display = 'none';
-    } else {
-      // En milieu de page => cacher les deux ou afficher les deux
-      scrollTopBtn.style.display = 'block';
-      scrollBottomBtn.style.display = 'block';
-    }
-  });
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  const height = document.documentElement.scrollHeight - window.innerHeight;
 
-  // Actions au clic
-  scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  // Affiche selon position
+  if (scrollY < 100) {
+    scrollBottomBtn.style.display = 'block';
+    scrollTopBtn.style.display = 'none';
+  } else if (scrollY >= height - 100) {
+    scrollTopBtn.style.display = 'block';
+    scrollBottomBtn.style.display = 'none';
+  } else {
+    scrollTopBtn.style.display = 'block';
+    scrollBottomBtn.style.display = 'block';
+  }
 
-  scrollBottomBtn.addEventListener('click', () => {
-    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-  });
+  // Montre les boutons pendant le scroll
+  scrollContainer.classList.add('scrolling');
 
-document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.toggle-button').forEach(button => {
-      button.addEventListener('click', function () {
-        const block = this.closest('.texte-block');
-        const details = block.querySelector('.full-details');
-
-        details.classList.toggle('show');
-        this.textContent = details.classList.contains('show') ? 'Réduire' : 'Lire plus';
-      });
-    });
-  });
+  // Réinitialise le timeout
+  clearTimeout(scrollTimeout);
+  scrollTimeout = setTimeout(() => {
+    scrollContainer.classList.remove('scrolling');
+  }, 800); // Disparaît après 800ms sans scroll
+});
