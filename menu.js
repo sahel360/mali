@@ -76,12 +76,34 @@ const scrollBottomBtn = document.getElementById('scrollBottom');
 const scrollContainer = document.querySelector('.scroll-buttons');
 
 let scrollTimeout;
+let isHovering = false;
 
+// Empêche de disparaître quand on survole les boutons
+scrollContainer.addEventListener('mouseenter', () => {
+  isHovering = true;
+  clearTimeout(scrollTimeout);
+  scrollContainer.classList.add('scrolling');
+});
+
+scrollContainer.addEventListener('mouseleave', () => {
+  isHovering = false;
+  startHideTimeout();
+});
+
+function startHideTimeout() {
+  clearTimeout(scrollTimeout);
+  scrollTimeout = setTimeout(() => {
+    if (!isHovering) {
+      scrollContainer.classList.remove('scrolling');
+    }
+  }, 800);
+}
+
+// Gère l'apparition selon le scroll
 window.addEventListener('scroll', () => {
   const scrollY = window.scrollY;
   const height = document.documentElement.scrollHeight - window.innerHeight;
 
-  // Affiche selon position
   if (scrollY < 100) {
     scrollBottomBtn.style.display = 'block';
     scrollTopBtn.style.display = 'none';
@@ -93,12 +115,15 @@ window.addEventListener('scroll', () => {
     scrollBottomBtn.style.display = 'block';
   }
 
-  // Montre les boutons pendant le scroll
   scrollContainer.classList.add('scrolling');
+  startHideTimeout();
+});
 
-  // Réinitialise le timeout
-  clearTimeout(scrollTimeout);
-  scrollTimeout = setTimeout(() => {
-    scrollContainer.classList.remove('scrolling');
-  }, 800); // Disparaît après 800ms sans scroll
+// Ajoute le comportement au clic
+scrollTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+scrollBottomBtn.addEventListener('click', () => {
+  window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
 });
